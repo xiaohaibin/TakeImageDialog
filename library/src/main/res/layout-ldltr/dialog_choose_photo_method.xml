@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/choose_photo_take"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_trans_divider"
+        android:gravity="center"
+        android:text="拍照"
+        android:textColor="@color/common_title"
+        android:textSize="16dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/common_line"
+        android:layout_height="1px" />
+
+    <TextView
+        android:id="@+id/choose_photo_system"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_trans_divider"
+        android:gravity="center"
+        android:text="从手机相册选取"
+        android:textColor="@color/common_title"
+        android:textSize="16dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/common_background" />
+
+    <TextView
+        android:id="@+id/choose_photo_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_trans_divider"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/common_main"
+        android:textSize="16dp" />
+
+</LinearLayout>

@@ -1,12 +1,18 @@
 package com.stx.xhb.library;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -119,10 +125,18 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.choose_photo_take) {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
-            startActivityForResult(intent, REQUEST_CAMERA);
-
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, 1);
+            } else {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    Uri uriForFile = FileProvider.getUriForFile(getActivity(), getActivity().getApplicationContext().getPackageName() + ".provider", tempFile);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, uriForFile);
+                }else {
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
+                }
+                startActivityForResult(intent, REQUEST_CAMERA);
+            }
         } else if (i == R.id.choose_photo_system) {
             Intent picture = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(picture, REQUEST_ALBUM);

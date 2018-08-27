@@ -1,9 +1,12 @@
 # TakeImage
+
 简洁的图片选择对话框
+
+- 适配7.0以上设备
 
 ### 效果图
 
-![](https://github.com/xiaohaibin/EnjoyLife/blob/master/screenshot/device-01.png)
+![](https://github.com/xiaohaibin/TakeImage/blob/master/screenshot/device-01.png)
 
 ### 关于我
 

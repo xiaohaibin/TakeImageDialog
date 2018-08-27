@@ -201,14 +201,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
         }
     }
 
-    /**
-     * 请求权限
-     * <p>
-     * 警告：此处除了用户拒绝外，唯一可能出现无法获取权限或失败的情况是在AndroidManifest.xml中未声明权限信息
-     * Android6.0+即便需要动态请求权限（重点）但不代表着不需要在AndroidManifest.xml中进行声明。
-     * @param permissions                  请求的权限
-     * @param onPermissionResponseListener 回调监听器
-     */
+
     public void requestPermission(String[] permissions, OnPermissionResponseListener onPermissionResponseListener) {
         this.onPermissionResponseListener = onPermissionResponseListener;
         if (checkPermissions(permissions)) {
@@ -234,11 +227,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
         return needRequestPermissionList;
     }
 
-    /**
-     * 检测所有的权限是否都已授权
-     * @param permissions
-     * @return
-     */
+
     public boolean checkPermissions(String[] permissions) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
@@ -253,11 +242,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
         return true;
     }
 
-    /**
-     * 确认所有的权限是否都已授权
-     * @param grantResults
-     * @return
-     */
+
     private boolean verifyPermissions(int[] grantResults) {
         for (int grantResult : grantResults) {
             if (grantResult != PackageManager.PERMISSION_GRANTED) {
@@ -273,9 +258,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
         void onFail();
     }
 
-    /**
-     * 显示提示对话框
-     */
+
     private void showTipsDialog() {
         new AlertDialog.Builder(getActivity())
                 .setTitle(getString(R.string.string_waring))
@@ -293,9 +276,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
                 }).show();
     }
 
-    /**
-     * 启动当前应用设置页面
-     */
+
     public void startAppSettings() {
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         intent.setData(Uri.parse("package:" + getActivity().getPackageName()));

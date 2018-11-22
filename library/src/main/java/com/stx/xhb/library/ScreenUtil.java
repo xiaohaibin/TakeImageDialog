@@ -6,8 +6,7 @@ import android.view.Display;
 import android.view.WindowManager;
 
 /**
- * Author: Mr.xiao on 2018/5/27
- *
+ * @author: Mr.xiao on 2018/5/27
  * @mail:xhb_199409@163.com
  * @github:https://github.com/xiaohaibin
  * @describe: ScreenUtil

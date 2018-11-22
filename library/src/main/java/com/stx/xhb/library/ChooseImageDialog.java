@@ -288,9 +288,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
     }
 
     public interface Operator {
-
         void onGetImage(String path);
-
     }
 
 }

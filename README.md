@@ -1,5 +1,7 @@
 # TakeImage
 
+[![jitpack](https://jitpack.io/v/xiaohaibin/TakeImageDialog.svg)](https://jitpack.io/#xiaohaibin/TakeImageDialog)
+
 简洁的图片选择对话框
 
 - 适配7.0以上设备

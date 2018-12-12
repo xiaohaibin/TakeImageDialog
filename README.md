@@ -12,7 +12,7 @@
 
 ### 使用
 
-Add it in your root build.gradle at the end of repositories:
+Step 1. Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
      repositories {
@@ -28,6 +28,22 @@ dependencies {
     //将latestVersion替换成上面 jitpack 后面的版本号
     iimplementation 'com.github.xiaohaibin:TakeImageDialog:latestVersion'
 }
+```
+Step 3. 代码中使用
+
+```
+
+  ChooseImageDialog chooseImageDialog = ChooseImageDialog.newInstance();
+        chooseImageDialog.setOperator(new ChooseImageDialog.Operator() {
+            @Override
+            public void onGetImage(String imaePath) {
+                Log.i("===>path",imaePath);
+                ((ImageView) findViewById(R.id.iv)).setImageURI(Uri.fromFile(new File(imaePath)));
+                Toast.makeText(MainActivity.this, imaePath, Toast.LENGTH_SHORT).show();
+            }
+        });
+        chooseImageDialog.show(getSupportFragmentManager(), null);
+	
 ```
 
 ### 关于我

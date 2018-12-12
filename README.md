@@ -26,7 +26,7 @@ Step 2. Add the dependency
 ```
 dependencies {
     //将latestVersion替换成上面 jitpack 后面的版本号
-    iimplementation 'com.github.xiaohaibin:TakeImageDialog:latestVersion'
+    implementation 'com.github.xiaohaibin:TakeImageDialog:latestVersion'
 }
 ```
 Step 3. 代码中使用

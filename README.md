@@ -10,6 +10,25 @@
 
 ![](https://github.com/xiaohaibin/TakeImage/blob/master/screenshot/device-01.png)
 
+### 使用
+
+Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+     repositories {
+	...
+	maven { url 'https://jitpack.io' }
+     }
+}
+
+```
+Step 2. Add the dependency
+```
+dependencies {
+    iimplementation 'com.github.xiaohaibin:TakeImageDialog:latestVersion'//将latestVersion替换成上面 jitpack 后面的版本号
+}
+```
+
 ### 关于我
 
 * **Email**: <xhb_199409@163.com>

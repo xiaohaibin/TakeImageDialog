@@ -46,6 +46,25 @@ Step 3. 代码中使用
 	
 ```
 
+Step 4. 清单文件配置
+
+```
+ <!--所需权限-->
+ <uses-permission android:name="android.permission.CAMERA" />
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+ 
+ <!--适配7.0及以上的设备，否则无法打开相机-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+```
 ### 关于我
 
 * **Email**: <xhb_199409@163.com>

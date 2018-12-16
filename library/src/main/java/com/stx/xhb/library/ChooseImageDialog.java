@@ -13,15 +13,12 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.io.File;
@@ -31,6 +28,7 @@ import java.util.List;
 
 /**
  * ChooseImageDialog
+ *
  * @author xiao.haibin
  * Description:统一选择图片对话框
  */
@@ -150,7 +148,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
 
                 }
             });
-
+            dismiss();
         } else if (i == R.id.choose_photo_system) {
             requestPermission(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, new OnPermissionResponseListener() {
                 @Override
@@ -163,6 +161,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
 
                 }
             });
+            dismiss();
         } else if (i == R.id.choose_photo_cancel) {
             dismiss();
         }
@@ -171,7 +170,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
     private void strartCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Uri uriForFile = FileProvider.getUriForFile(getActivity(), getActivity().getApplicationContext().getPackageName() + ".provider", tempFile);
+            Uri uriForFile = FileProvider.getUriForFile(getActivity(), getActivity().getApplicationContext().getPackageName() + ".fileProvider", tempFile);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, uriForFile);
         } else {
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
@@ -220,7 +219,7 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
         for (String permission : permissions) {
             if (ContextCompat.checkSelfPermission(getActivity(), permission) !=
                     PackageManager.PERMISSION_GRANTED ||
-                    shouldShowRequestPermissionRationale( permission)) {
+                    shouldShowRequestPermissionRationale(permission)) {
                 needRequestPermissionList.add(permission);
             }
         }

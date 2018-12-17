@@ -148,7 +148,6 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
 
                 }
             });
-            dismiss();
         } else if (i == R.id.choose_photo_system) {
             requestPermission(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, new OnPermissionResponseListener() {
                 @Override
@@ -161,7 +160,6 @@ public class ChooseImageDialog extends BaseDialogFragment implements View.OnClic
 
                 }
             });
-            dismiss();
         } else if (i == R.id.choose_photo_cancel) {
             dismiss();
         }

@@ -1,4 +1,4 @@
-package com.stx.xhb.takephoto;
+package com.stx.xhb.demo;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.stx.xhb.library.ChooseImageDialog;
+import com.stx.xhb.takephoto.ChooseImageDialog;
 
 import java.io.File;
 

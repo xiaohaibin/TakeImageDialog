@@ -1,4 +1,4 @@
-package com.stx.xhb.takephoto;
+package com.stx.xhb.demo;
 
 import org.junit.Test;
 

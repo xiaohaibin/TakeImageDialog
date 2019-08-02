@@ -1,4 +1,4 @@
-package com.stx.xhb.takephoto;
+package com.stx.xhb.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

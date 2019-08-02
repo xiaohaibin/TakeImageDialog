@@ -1,4 +1,4 @@
-package com.stx.xhb.library;
+package com.stx.xhb.takephoto;
 
 import android.Manifest;
 import android.app.Activity;
@@ -20,6 +20,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
+
+import com.stx.xhb.takephoto.R;
 
 import java.io.File;
 import java.util.ArrayList;

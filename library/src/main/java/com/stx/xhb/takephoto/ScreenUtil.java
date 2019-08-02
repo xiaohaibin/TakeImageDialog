@@ -1,4 +1,4 @@
-package com.stx.xhb.library;
+package com.stx.xhb.takephoto;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

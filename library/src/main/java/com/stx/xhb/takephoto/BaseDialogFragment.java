@@ -1,4 +1,4 @@
-package com.stx.xhb.library;
+package com.stx.xhb.takephoto;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
